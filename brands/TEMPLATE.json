@@ -1,0 +1,28 @@
+{
+  "name": "Template (defaults every brand inherits)",
+  "channel": "",
+  "colors": {
+    "ink": "#071A19",
+    "bg_center": "#123F3A",
+    "bg_edge": "#041312",
+    "accent": "#C6F432",
+    "accent2": "#4FE3B5",
+    "alert": "#FF5A6E",
+    "text": "#FFFFFF",
+    "soft": "#F5F1E6",
+    "behind_text": "#0D3A34"
+  },
+  "fonts": {
+    "display": "anton/400Regular",
+    "caption": "montserrat/900Black",
+    "label": "space-grotesk/700Bold",
+    "sub": "montserrat/800ExtraBold"
+  },
+  "captions": {"uppercase": true, "size_169": 82, "size_916": 92, "stroke": 9},
+  "title_motif": "helix",
+  "floaters": ["atom", "microscope", "leaf", "flask", "virus"],
+  "music": {"mood": "uplifting", "bpm": 105, "key": 0},
+  "grade": {},
+  "finish": {"vignette": 0.30, "grain": 0.018},
+  "end_card": {"lines": ["THANKS FOR", "WATCHING!", "SEE YOU IN THE NEXT ONE"], "button": "SUBSCRIBE"}
+}

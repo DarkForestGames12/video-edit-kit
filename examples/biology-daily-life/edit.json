@@ -1,0 +1,376 @@
+{
+ "brand": "example-science",
+ "format": "16:9",
+ "mode": "full",
+ "notes": "Reference edit: the first video this kit was built from (38 s webcam take -> 27.4 s). Times: segment in/out = source video seconds; everything else = output seconds or refs (w12, B1.start, title.in, end).",
+ "segments": [
+  {
+   "name": "H1",
+   "in": 16.618,
+   "out": 17.468,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.16,
+     1.2
+    ],
+    "px": 0.7,
+    "py": 0.4
+   },
+   "note": "HOOK: strongest line moved to the top"
+  },
+  {
+   "name": "H2",
+   "in": 22.068,
+   "out": 24.738,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.28,
+     1.32
+    ],
+    "px": 0.72,
+    "py": 0.42
+   },
+   "note": "hook cont. (4.5 s thinking pause + 'mm... yeah' + doubled 'can' removed)"
+  },
+  {
+   "name": "G1",
+   "in": 1.168,
+   "out": 4.558,
+   "enter": "whip",
+   "shot": {
+    "z": [
+     1.0,
+     1.035
+    ],
+    "px": 0.5,
+    "py": 0.4
+   },
+   "note": "greeting; lean-in toward camera at 3.0-4.9 is covered by the title card"
+  },
+  {
+   "name": "G2",
+   "in": 4.938,
+   "out": 6.888,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.0
+    ],
+    "px": 0.5,
+    "py": 0.4
+   },
+   "note": "'uh' removed before 'tell'"
+  },
+  {
+   "name": "B1",
+   "in": 7.708,
+   "out": 9.408,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.12,
+     1.15
+    ],
+    "px": 0.5,
+    "py": 0.41
+   },
+   "note": "stutter 'it... it is' trimmed to one 'it'"
+  },
+  {
+   "name": "B2",
+   "in": 9.828,
+   "out": 10.608,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.01
+    ],
+    "px": 0.5,
+    "py": 0.4
+   }
+  },
+  {
+   "name": "B3",
+   "in": 10.928,
+   "out": 11.738,
+   "enter": "morph",
+   "shot": {
+    "z": [
+     1.01,
+     1.04
+    ],
+    "px": 0.5,
+    "py": 0.4
+   }
+  },
+  {
+   "name": "B4",
+   "in": 12.298,
+   "out": 13.538,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.12,
+     1.15
+    ],
+    "px": 0.5,
+    "py": 0.41
+   }
+  },
+  {
+   "name": "B5",
+   "in": 15.368,
+   "out": 16.338,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.26,
+     1.32
+    ],
+    "px": 0.5,
+    "py": 0.42
+   },
+   "note": "'um' removed before 'biology'"
+  },
+  {
+   "name": "B6",
+   "in": 25.998,
+   "out": 27.148,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.03
+    ],
+    "px": 0.5,
+    "py": 0.4
+   },
+   "note": "false start 'It is...' removed"
+  },
+  {
+   "name": "B7",
+   "in": 28.288,
+   "out": 29.888,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.15,
+     1.18
+    ],
+    "px": 0.71,
+    "py": 0.41
+   },
+   "note": "'re- uh and' removed"
+  },
+  {
+   "name": "B8a",
+   "in": 31.308,
+   "out": 32.008,
+   "enter": "morph",
+   "shot": {
+    "z": [
+     1.18,
+     1.19
+    ],
+    "px": 0.71,
+    "py": 0.41
+   },
+   "note": "filler 'um' removed"
+  },
+  {
+   "name": "B8b",
+   "in": 32.408,
+   "out": 34.208,
+   "enter": "morph",
+   "shot": {
+    "z": [
+     1.19,
+     1.22
+    ],
+    "px": 0.71,
+    "py": 0.41
+   }
+  },
+  {
+   "name": "B9",
+   "in": 34.508,
+   "out": 35.738,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.02,
+     1.07
+    ],
+    "px": 0.5,
+    "py": 0.4
+   }
+  },
+  {
+   "name": "B10",
+   "in": 35.848,
+   "out": 37.088,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.08,
+     1.12
+    ],
+    "px": 0.5,
+    "py": 0.4
+   },
+   "note": "starts early: smile + wave (picture leads the word 'Goodbye')"
+  }
+ ],
+ "punches": [
+  {
+   "at": 9.8,
+   "z": 1.3,
+   "dur": 0.16,
+   "note": "punch-in on 'important'"
+  }
+ ],
+ "hook_text": {
+  "lines": [
+   "BIO",
+   "LOGY"
+  ],
+  "in": 0.06,
+  "out": 2.95
+ },
+ "title_card": {
+  "in": 5.714,
+  "out": 8.0,
+  "end": 8.33,
+  "kicker": "WHY YOU SHOULD STUDY",
+  "title": "BIOLOGY",
+  "sub": "IN YOUR DAILY LIFE"
+ },
+ "captions": {
+  "skip": [
+   0
+  ],
+  "keywords": {
+   "BIOLOGY": "accent",
+   "IMPORTANT": "accent",
+   "STUDY": "accent",
+   "HEART": "alert",
+   "HEALTH": "accent2",
+   "SO": "accent",
+   "MUCH": "accent",
+   "GOODBYE": "accent"
+  }
+ },
+ "stickers": [
+  {
+   "icon": "hand",
+   "color": "#F2A93B",
+   "in": 3.5,
+   "out": 4.62,
+   "side": "right",
+   "mode": "wave"
+  },
+  {
+   "icon": "book-open",
+   "color": "#2E7DF6",
+   "in": 11.3,
+   "out": 12.02,
+   "side": "left",
+   "mode": "bob"
+  },
+  {
+   "icon": "dna",
+   "color": "#12A37E",
+   "in": 13.38,
+   "out": 14.22,
+   "side": "left",
+   "mode": "spin"
+  },
+  {
+   "icon": "hand",
+   "color": "#F2A93B",
+   "in": 21.36,
+   "out": 21.98,
+   "side": "right",
+   "mode": "wave"
+  }
+ ],
+ "cards": [
+  {
+   "kind": "pulse",
+   "icon": "heart",
+   "label": "YOUR HEART",
+   "color": "alert",
+   "in": 15.4,
+   "out": 17.02,
+   "beats": [
+    16.46,
+    17.05
+   ],
+   "ecg": true
+  },
+  {
+   "kind": "rings",
+   "icon": "shield-heart",
+   "label": "YOUR HEALTH",
+   "color": "accent2",
+   "in": 17.08,
+   "out": 19.33,
+   "pop": 18.98,
+   "check": true
+  }
+ ],
+ "burst": {
+  "in": 19.62,
+  "out": 20.74,
+  "icons": [
+   [
+    "brain",
+    "#FF8FB1"
+   ],
+   [
+    "lungs",
+    "#FF7A59"
+   ],
+   [
+    "microscope",
+    "#5AA9FF"
+   ],
+   [
+    "dna",
+    "#12A37E"
+   ],
+   [
+    "apple-whole",
+    "#FF4D5E"
+   ],
+   [
+    "seedling",
+    "#3DBE6B"
+   ],
+   [
+    "eye",
+    "#9B7BFF"
+   ],
+   [
+    "bone",
+    "#E8C07A"
+   ]
+  ]
+ },
+ "end_card": {
+  "in": "B10.end",
+  "length": 5.42,
+  "loop": [
+   36.17,
+   36.9
+  ]
+ },
+ "music": {
+  "mood": "uplifting",
+  "bpm": 105
+ }
+}
