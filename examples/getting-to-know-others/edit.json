@@ -1,0 +1,778 @@
+{
+ "brand": "examples/getting-to-know-others/brand.json",
+ "format": "16:9",
+ "mode": "full",
+ "notes": "Worked example: Getting to Know Others: 2 Ways (77.4 s -> 68.0 s). Read NOTES.md first; cutlog.md shows what was kept, cut and where every graphic lands. Times: segment in/out = source video seconds; everything else = output seconds or refs (w12, B1.start, title.in, end).",
+ "example": {
+  "title": "Getting to Know Others: 2 Ways",
+  "source_s": 77.37,
+  "output_s": 67.99,
+  "date": "2026-10-10"
+ },
+ "segments": [
+  {
+   "name": "HA",
+   "in": 56.04,
+   "out": 58.18,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.16,
+     1.19
+    ],
+    "px": 0.7
+   },
+   "note": "HOOK (cold open): the relatable line, moved to 0s; it plays again in context later"
+  },
+  {
+   "name": "HB",
+   "in": 58.6,
+   "out": 60.02,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.27,
+     1.3
+    ],
+    "px": 0.72
+   },
+   "note": "hook cont., 0.5 s pause removed"
+  },
+  {
+   "name": "HC",
+   "in": 60.47,
+   "out": 61.34,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.19,
+     1.22
+    ],
+    "px": 0.7
+   },
+   "note": "hook end, 0.5 s pause removed"
+  },
+  {
+   "name": "G",
+   "in": 0.74,
+   "out": 5.8,
+   "enter": "whip",
+   "shot": {
+    "z": [
+     1.0,
+     1.03
+    ]
+   },
+   "note": "greeting; title card covers 'two ways of getting to know others'"
+  },
+  {
+   "name": "G2",
+   "in": 6.72,
+   "out": 9.72,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.12,
+     1.15
+    ]
+   },
+   "note": "mumbled 'with... yeah' false start removed"
+  },
+  {
+   "name": "B1",
+   "in": 10.46,
+   "out": 13.42,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.15,
+     1.18
+    ],
+    "px": 0.71
+   },
+   "note": "option 1"
+  },
+  {
+   "name": "B2",
+   "in": 13.74,
+   "out": 18.45,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.22,
+     1.25
+    ],
+    "px": 0.71
+   },
+   "note": "option 2"
+  },
+  {
+   "name": "B3a",
+   "in": 19.23,
+   "out": 20.42,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.03
+    ]
+   },
+   "note": "'Both options have'"
+  },
+  {
+   "name": "B3b",
+   "in": 21.33,
+   "out": 22.95,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.12,
+     1.15
+    ]
+   },
+   "note": "stumble 'this... at once' removed"
+  },
+  {
+   "name": "B4",
+   "in": 23.58,
+   "out": 26.05,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.03
+    ]
+   },
+   "note": "Firstly"
+  },
+  {
+   "name": "B5",
+   "in": 26.45,
+   "out": 28.05,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.14,
+     1.17
+    ]
+   },
+   "note": "0.5 s pause removed"
+  },
+  {
+   "name": "B6",
+   "in": 28.44,
+   "out": 34.9,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.04
+    ]
+   },
+   "note": "pros of online chat; punch on 'convenient'"
+  },
+  {
+   "name": "B8a",
+   "in": 36.46,
+   "out": 39.86,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.12,
+     1.15
+    ]
+   },
+   "note": "breath + 1.2 s pause removed"
+  },
+  {
+   "name": "B8b",
+   "in": 40.4,
+   "out": 41.52,
+   "enter": "morph",
+   "shot": {
+    "z": [
+     1.15,
+     1.16
+    ]
+   },
+   "note": "doubled 'be' removed: 'can be sometimes misunderstood'"
+  },
+  {
+   "name": "B9a",
+   "in": 42.66,
+   "out": 46.7,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.03
+    ]
+   },
+   "note": "Secondly; 1.3 s pause removed"
+  },
+  {
+   "name": "B9b",
+   "in": 47.5,
+   "out": 48.8,
+   "enter": "morph",
+   "shot": {
+    "z": [
+     1.03,
+     1.04
+    ]
+   },
+   "note": "stumble 'pe- per-' and 'yep' removed before 'people'"
+  },
+  {
+   "name": "B10a",
+   "in": 49.48,
+   "out": 52.22,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.14,
+     1.17
+    ]
+   },
+   "note": "0.8 s pause removed"
+  },
+  {
+   "name": "B10b",
+   "in": 52.56,
+   "out": 53.68,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.03
+    ]
+   },
+   "note": "'and enjoy snacks' (icon burst)"
+  },
+  {
+   "name": "B11a",
+   "in": 54.76,
+   "out": 55.58,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.02
+    ]
+   },
+   "note": "However"
+  },
+  {
+   "name": "B11b",
+   "in": 56.04,
+   "out": 60.02,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.14,
+     1.17
+    ]
+   },
+   "note": "the hook line in context; punch on 'nervous'"
+  },
+  {
+   "name": "B11c",
+   "in": 60.47,
+   "out": 61.34,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.12,
+     1.13
+    ]
+   },
+   "note": "0.5 s pause removed"
+  },
+  {
+   "name": "B12a",
+   "in": 62.92,
+   "out": 64.9,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.0,
+     1.03
+    ]
+   },
+   "note": "In conclusion; 1.8 s pause removed"
+  },
+  {
+   "name": "B12b",
+   "in": 66.5,
+   "out": 69.62,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.12,
+     1.15
+    ]
+   },
+   "note": "'okay... uh' removed between 'both' and 'choices'"
+  },
+  {
+   "name": "B13",
+   "in": 69.92,
+   "out": 73.12,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.18,
+     1.24
+    ]
+   },
+   "note": "the verdict, slow push; pause before 'an informal meeting' kept for drama"
+  },
+  {
+   "name": "BYE",
+   "in": 73.55,
+   "out": 74.95,
+   "enter": "cut",
+   "shot": {
+    "z": [
+     1.06,
+     1.09
+    ]
+   },
+   "note": "smile, wave and 'bye bye' (picture leads the word)"
+  }
+ ],
+ "end_card": {
+  "in": "BYE.end",
+  "length": 5.4,
+  "loop": [
+   74.05,
+   74.62
+  ]
+ },
+ "music": {
+  "mood": "warm"
+ },
+ "hook_text": {
+  "lines": [
+   "FEEL",
+   "NERVOUS?"
+  ],
+  "in": 0.06,
+  "out": "HC.end-0.45",
+  "tuck": 0.36
+ },
+ "title_card": {
+  "in": "w18-0.08",
+  "out": "G2.start-0.31",
+  "end": "G2.start+0.02",
+  "kicker": "GETTING TO KNOW OTHERS",
+  "title": "2 WAYS",
+  "sub": "BEFORE A NEW SCHOOL OR UNIVERSITY"
+ },
+ "captions": {
+  "fix": {
+   "55": "advantages"
+  },
+  "keywords": {
+   "NERVOUS": "alert",
+   "ONLINE": "accent2",
+   "CHAT": "accent2",
+   "INFORMAL": "accent",
+   "MEETING": "accent",
+   "ADVANTAGES": "accent2",
+   "DISADVANTAGES": "alert",
+   "MISUNDERSTOOD": "alert",
+   "CONVENIENT": "accent2",
+   "PREFER": "accent"
+  },
+  "groups": [
+   [
+    0,
+    1
+   ],
+   [
+    2,
+    3,
+    4
+   ],
+   [
+    5,
+    6
+   ],
+   [
+    7,
+    8
+   ],
+   [
+    9,
+    10
+   ],
+   [
+    11,
+    12,
+    13,
+    14
+   ],
+   [
+    15,
+    16,
+    17
+   ],
+   [
+    18,
+    19,
+    20
+   ],
+   [
+    21,
+    22,
+    23,
+    24
+   ],
+   [
+    25,
+    26
+   ],
+   [
+    27,
+    28,
+    29
+   ],
+   [
+    30,
+    31
+   ],
+   [
+    32,
+    33,
+    34,
+    35
+   ],
+   [
+    36,
+    37,
+    38,
+    39
+   ],
+   [
+    40,
+    41,
+    42
+   ],
+   [
+    43,
+    44
+   ],
+   [
+    45,
+    46,
+    47
+   ],
+   [
+    48,
+    49,
+    50,
+    51
+   ],
+   [
+    52,
+    53,
+    54
+   ],
+   [
+    55,
+    56,
+    57
+   ],
+   [
+    58
+   ],
+   [
+    59,
+    60,
+    61,
+    62
+   ],
+   [
+    63,
+    64,
+    65
+   ],
+   [
+    66,
+    67,
+    68,
+    69
+   ],
+   [
+    70,
+    71,
+    72,
+    73
+   ],
+   [
+    74,
+    75
+   ],
+   [
+    76,
+    77
+   ],
+   [
+    78,
+    79,
+    80,
+    81
+   ],
+   [
+    82,
+    83,
+    84
+   ],
+   [
+    85,
+    86,
+    87
+   ],
+   [
+    88,
+    89
+   ],
+   [
+    90
+   ],
+   [
+    91,
+    92,
+    93
+   ],
+   [
+    94,
+    95,
+    96,
+    97
+   ],
+   [
+    98
+   ],
+   [
+    99,
+    100,
+    101
+   ],
+   [
+    102,
+    103
+   ],
+   [
+    104,
+    105,
+    106,
+    107
+   ],
+   [
+    108
+   ],
+   [
+    109,
+    110,
+    111
+   ],
+   [
+    112
+   ],
+   [
+    113,
+    114
+   ],
+   [
+    115,
+    116,
+    117
+   ],
+   [
+    118,
+    119
+   ],
+   [
+    120,
+    121
+   ],
+   [
+    122,
+    123
+   ],
+   [
+    124,
+    125,
+    126
+   ],
+   [
+    127,
+    128
+   ],
+   [
+    129,
+    130
+   ],
+   [
+    131,
+    132,
+    133,
+    134
+   ],
+   [
+    135,
+    136,
+    137
+   ],
+   [
+    138
+   ]
+  ]
+ },
+ "punches": [
+  {
+   "at": "w69-0.05",
+   "z": 1.18,
+   "dur": 0.16,
+   "note": "'convenient'"
+  },
+  {
+   "at": "w117-0.05",
+   "z": 1.32,
+   "dur": 0.16,
+   "note": "'nervous' (in context)"
+  }
+ ],
+ "stickers": [
+  {
+   "icon": "sun",
+   "color": "#FFB020",
+   "in": "w10-0.05",
+   "out": "w11+0.6",
+   "side": "right",
+   "mode": "spin"
+  },
+  {
+   "icon": "scale-balanced",
+   "color": "#3B82F6",
+   "in": "w55-0.05",
+   "out": "B3b.end-0.08",
+   "side": "left",
+   "mode": "pop"
+  },
+  {
+   "icon": "house",
+   "color": "#F59E0B",
+   "in": "w73-0.08",
+   "out": "w75",
+   "side": "left",
+   "mode": "bob"
+  },
+  {
+   "icon": "school",
+   "color": "#3B82F6",
+   "in": "w80-0.08",
+   "out": "B6.end-0.08",
+   "side": "right",
+   "mode": "pop"
+  },
+  {
+   "icon": "circle-question",
+   "color": "#FF6B6B",
+   "in": "w89-0.05",
+   "out": "B8b.end-0.06",
+   "side": "left",
+   "mode": "spin"
+  },
+  {
+   "icon": "handshake",
+   "color": "#10B981",
+   "in": "w100-0.08",
+   "out": "B9b.end-0.08",
+   "side": "right",
+   "mode": "pop"
+  },
+  {
+   "icon": "face-grimace",
+   "color": "#FF6B6B",
+   "in": "w117-0.05",
+   "out": "w119+0.3",
+   "side": "left",
+   "mode": "bob"
+  },
+  {
+   "icon": "hand",
+   "color": "#F2A93B",
+   "in": "w138-0.1",
+   "out": "BYE.end-0.02",
+   "side": "right",
+   "mode": "wave"
+  }
+ ],
+ "cards": [
+  {
+   "kind": "plain",
+   "icon": "comments",
+   "label": "ONLINE CHAT",
+   "color": "accent2",
+   "in": "w35-0.25",
+   "out": "B1.end",
+   "pop": "w37"
+  },
+  {
+   "kind": "plain",
+   "icon": "people-group",
+   "label": "INFORMAL MEETING",
+   "color": "accent",
+   "in": "B2.start+0.12",
+   "out": "B2.end",
+   "pop": "w47"
+  },
+  {
+   "kind": "rings",
+   "icon": "people-group",
+   "label": "MY PICK",
+   "color": "accent",
+   "in": "w131-0.1",
+   "out": "B13.end-0.03",
+   "pop": "w137",
+   "check": true
+  }
+ ],
+ "burst": {
+  "in": "w110-0.1",
+  "out": "B10b.end",
+  "icons": [
+   [
+    "mug-hot",
+    "#C47F3A"
+   ],
+   [
+    "cookie-bite",
+    "#D9A05B"
+   ],
+   [
+    "pizza-slice",
+    "#FF7A45"
+   ],
+   [
+    "comments",
+    "#3DDAD7"
+   ],
+   [
+    "face-laugh-beam",
+    "#FFC93C"
+   ],
+   [
+    "people-group",
+    "#7C83FD"
+   ],
+   [
+    "handshake",
+    "#10B981"
+   ]
+  ]
+ }
+}

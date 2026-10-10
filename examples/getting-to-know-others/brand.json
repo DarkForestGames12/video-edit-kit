@@ -1,0 +1,45 @@
+{
+ "name": "One-off: getting to know others (no channel)",
+ "colors": {
+  "ink": "#0D1B2A",
+  "bg_center": "#1B3358",
+  "bg_edge": "#070F1C",
+  "accent": "#FFC93C",
+  "accent2": "#3DDAD7",
+  "alert": "#FF6B6B",
+  "text": "#FFFFFF",
+  "soft": "#F3EFE6",
+  "behind_text": "#13294B"
+ },
+ "fonts": {
+  "display": "anton/400Regular",
+  "caption": "poppins/800ExtraBold",
+  "label": "space-grotesk/700Bold",
+  "sub": "poppins/700Bold"
+ },
+ "title_motif": "orbit",
+ "floaters": [
+  "comments",
+  "user-group",
+  "graduation-cap",
+  "mug-hot",
+  "school"
+ ],
+ "music": {
+  "mood": "warm"
+ },
+ "end_card": {
+  "lines": [
+   "THANKS FOR",
+   "WATCHING!",
+   "WHICH WOULD YOU PICK?"
+  ],
+  "button": null
+ },
+ "grade": {
+  "subj_gamma": 0.92,
+  "lut_gamma": 0.86,
+  "lut_s": 0.33,
+  "subj_exposure": 1.03
+ }
+}

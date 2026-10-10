@@ -10,8 +10,10 @@ designed for *this* video, never a template pass. Work through every stage below
 one exists because skipping it caused a visible or audible flaw before.
 
 The toolkit lives at **https://github.com/DarkForestGames12/video-edit-kit**. Reference spec:
-`docs/EDIT_SPEC.md`. Worked example (the first video edited this way, 38 s webcam take → 27 s):
-`examples/biology-daily-life/edit.json`, which shows every feature with a note on each cut.
+`docs/EDIT_SPEC.md`. Worked examples: `examples/` — one folder per finished edit (index:
+`examples/README.md`), each with NOTES.md (decisions, problems, lessons), cutlog.md (what was kept,
+what was cut, where each graphic lands) and the edit.json itself. Every edit adds one (stage 8), so
+the kit gets better with every video.
 
 ## 0. Setup (every session — the workspace is wiped between sessions)
 1. Get the toolkit anonymously (the repo is public):
@@ -26,7 +28,7 @@ The toolkit lives at **https://github.com/DarkForestGames12/video-edit-kit**. Re
 3. Find the video: attachments are in `/mnt/user-data/uploads/`. If it's on the user's linked
    computer, stage it with the device tools (per-file cap ~400 MB — ask the user to split longer
    recordings or attach parts). Copy uploads before modifying; never edit originals.
-4. Tell the user in one line what you're about to do, then create a task list (stages 1–7).
+4. Tell the user in one line what you're about to do, then create a task list (stages 1–8).
 
 ## 1. Intake (one AskUserQuestion call, before heavy work)
 - **Channel** → `python -m vek brands` lists saved kits. Options: each saved kit + "New channel".
@@ -58,6 +60,11 @@ python -m vek transcribe JOB
 - Check doubtful spots: `python -m vek asr JOB 27.3:28.9 28.2:29.7` (transcribe ranges).
 
 ## 3. Edit decisions — the craft
+**Learn from past edits first:** read `examples/README.md`, then NOTES.md of the one or two closest
+examples (same channel, similar speaker, length or structure). Apply their lessons; open their
+cutlog.md / edit.json when you need a concrete pattern (what got cut, caption groups, which word a
+card pops on). Don't copy their graphics — design for this video.
+
 Optionally start from `python -m vek autocut JOB` (draft in `cuts.draft.json`), but decide yourself.
 1. **Hook first.** Find the single strongest self-contained line (a bold claim, payoff, surprise, or
    "X can help you so much…") and move it to 0.0 s. Greeting ("hey guys, welcome back") comes
@@ -143,8 +150,31 @@ captions never over the mouth.
   → `<name>.mp4` (≤29 MB share copy) and `<name>_master.mp4` in `/mnt/user-data/outputs`. Send
   the share copy with SendUserFile.
   If the computer is linked, also write the master into a folder they choose.
-- Final message: what changed (hook moved, what was cut, with times), the look, graphics, sound,
-  any caption wording choices, and one next step. No step-by-step recap.
+
+## 8. Save this edit as an example (every video, also when working unattended)
+```
+python -m vek example JOB <slug> "<Title>"   # examples/<slug>/: edit.json (+ one-off brand.json),
+                                             # cutlog.md (generated), NOTES.md (skeleton)
+```
+- Fill in every TODO in `examples/<slug>/NOTES.md`, honestly and specifically: tags; the video
+  (topic, speaker style, camera, visual problems); key decisions (hook and why, structure, cuts,
+  graphics and the words they sit on, what you kept on purpose); problems and fixes (including any
+  kit change you made); lessons for next time as short reusable rules. Read the generated
+  cutlog.md once to check it matches what you did.
+- `python -m vek example-pack <slug>` → refuses while TODOs remain, rebuilds `examples/README.md`,
+  then zips for upload: `example-<slug>.zip` if only `examples/` changed, or the whole kit as
+  `video-edit-kit.zip` if you also changed the kit's code/docs during this edit.
+- Send that zip (SendUserFile) and ask the user to upload it: unzip → github.com → their repo →
+  Add file → Upload files → drag in the `examples` folder (or, for the whole kit, everything in the
+  unzipped folder); same-named files are replaced. Don't push it yourself.
+- Examples are text only (no frames, audio or video) because the repo is public.
+- Format "Both": save the 16:9 job and mention the vertical version (and anything it needed) in NOTES.md.
+- `python -m vek example` missing → the repo still holds an older kit; tell the user to upload the
+  latest video-edit-kit.zip, and write the example folder by hand in the same layout meanwhile.
+
+**Final message:** what changed (hook moved, what was cut, with times), the look, graphics, sound,
+any caption wording choices, one next step, and a one-line reminder to upload the example zip.
+No step-by-step recap.
 
 ## Gotchas
 - Word timings come from forced alignment (CTC); recogniser timestamps alone drift 0.1–0.3 s.
@@ -157,4 +187,4 @@ captions never over the mouth.
 - Long videos: picking the hook and cuts from an hour of transcript is the real work — read the
   phrase map in chunks, use `autocut` for fillers, spend judgment on hook, structure and the
   1–3 cards per section; add `title_card` and an `end_card` as usual.
-- Brand kits only persist if the user uploads them to `brands/` in their repo (you never push).
+- Brand kits and examples only persist if the user uploads them to their repo (you never push).

@@ -18,6 +18,8 @@ python -m vek frames  jobs/myvid 1.5 6.5 16   # spot-check frames
 python -m vek render  jobs/myvid final        # full render -> jobs/myvid/out/final.mp4
 python -m vek review  jobs/myvid jobs/myvid/out/final.mp4
 python -m vek deliver jobs/myvid jobs/myvid/out/final.mp4 My_Video
+python -m vek example jobs/myvid my-video "My Video"   # save as a worked example, fill in NOTES.md
+python -m vek example-pack my-video                    # zip it for upload to this repo
 ```
 
 ## Pipeline
@@ -34,6 +36,14 @@ python -m vek deliver jobs/myvid jobs/myvid/out/final.mp4 My_Video
 | long videos | `longform.py` | engine for the opening and end card, ffmpeg + LUT + .ass captions + overlay clips for the body |
 | QA | `review.py` | contact sheets of the render, speech intelligibility check of the final mix, loudness |
 | delivery | `deliver.py` | master + a share copy under 29 MB |
+| examples | `example.py` | saves the finished edit as `examples/<slug>/`, rebuilds the index, zips for upload |
+
+## Worked examples
+`examples/<slug>/` holds every finished edit: `edit.json`, a generated `cutlog.md` (playback order
+with the words kept, everything removed from the source and what was said there, the word each
+graphic lands on) and `NOTES.md` (the video, key decisions, problems and fixes, lessons).
+`examples/README.md` is the index. The skill reads the closest examples before each new edit and
+adds one after it. Text only: no frames, audio or video.
 
 ## Brand kits
 `brands/<channel>.json` overrides `brands/TEMPLATE.json` (colours, fonts, caption style, title

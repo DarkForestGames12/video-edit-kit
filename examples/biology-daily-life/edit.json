@@ -2,7 +2,13 @@
  "brand": "example-science",
  "format": "16:9",
  "mode": "full",
- "notes": "Reference edit: the first video this kit was built from (38 s webcam take -> 27.4 s). Times: segment in/out = source video seconds; everything else = output seconds or refs (w12, B1.start, title.in, end).",
+ "notes": "Worked example: Why Biology Matters in Daily Life (38.1 s -> 27.5 s). Read NOTES.md first; cutlog.md shows what was kept, cut and where every graphic lands. Times: segment in/out = source video seconds; everything else = output seconds or refs (w12, B1.start, title.in, end).",
+ "example": {
+  "title": "Why Biology Matters in Daily Life",
+  "source_s": 38.1,
+  "output_s": 27.5,
+  "date": "2026-10-09"
+ },
  "segments": [
   {
    "name": "H1",

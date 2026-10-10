@@ -1,7 +1,8 @@
 # edit.json — the per-video edit spec
 
 One JSON file per video, in the job folder. Claude writes it after reading the transcript and
-contact sheets; every render stage reads it. Full worked example: `examples/biology-daily-life/edit.json`.
+contact sheets; every render stage reads it. Worked examples: `examples/` (index in `examples/README.md`;
+each folder has the edit.json, a generated cutlog.md and NOTES.md).
 
 ## Time values
 - `segments[].in` / `.out` are **source video seconds** (the video clock; the audio offset is
@@ -14,7 +15,7 @@ contact sheets; every render stage reads it. Full worked example: `examples/biol
 ## Top level
 | key | value |
 |---|---|
-| `brand` | brand kit name in `brands/` (e.g. `"example-science"`) |
+| `brand` | brand kit name in `brands/` (e.g. `"example-science"`), or a path to a brand file (absolute, or relative to the kit, e.g. `"examples/<slug>/brand.json"`) |
 | `format` | `"16:9"` (1920x1080) or `"9:16"` (1080x1920). Make two job folders for both. |
 | `mode` | `"full"` (every frame designed; up to ~5 min) or `"long"` (hybrid render for long videos) |
 | `segments` | the cut, **in playback order** (reordering = moving the hook to the top) |

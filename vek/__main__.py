@@ -12,6 +12,9 @@
   review <job> <video>        review sheets, speech check, loudness, spot-check times
   deliver <job> <video> <name>  master + <=29 MB share copy in /mnt/user-data/outputs
   vertical <job> <new_job>    copy a finished 16:9 job as a 9:16 job (reframed shots, same cut/audio)
+  example <job> <slug> "Title"  save the finished edit as examples/<slug>/ (edit.json, cutlog.md, NOTES.md)
+  example-pack <slug>         check NOTES.md, rebuild examples/README.md, zip for upload to the repo
+  pack-kit                    zip the whole kit (examples included) for upload to the repo
   icons <word>                search Font Awesome icon names
   brands                      list brand kits
 """
@@ -65,6 +68,12 @@ def main():
         from .deliver import main as m; m(a[1], a[2], a[3])
     elif cmd == "vertical":
         make_vertical(a[1], a[2])
+    elif cmd == "example":
+        from .example import make; make(a[1], a[2], a[3] if len(a) > 3 else None)
+    elif cmd == "example-pack":
+        from .example import pack; pack(a[1])
+    elif cmd == "pack-kit":
+        from .example import pack_kit; pack_kit()
     elif cmd == "icons":
         from .gfx import icon_codes
         q = a[1].lower()

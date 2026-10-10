@@ -69,6 +69,8 @@ def ffprobe(path):
 
 def load_brand(name_or_path):
     p = name_or_path
+    if not os.path.exists(p) and os.path.exists(os.path.join(REPO, p)):   # e.g. examples/<slug>/brand.json
+        p = os.path.join(REPO, p)
     if not os.path.exists(p):
         p = os.path.join(BRANDS, name_or_path if name_or_path.endswith(".json") else name_or_path + ".json")
     with open(p) as f:
