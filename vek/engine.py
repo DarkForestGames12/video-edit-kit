@@ -184,6 +184,8 @@ class Engine:
         self.whips = [s["ostart"] for s in self.segs if s["enter"] == "whip"]
         # captions ------------------------------------------------------
         cap = ed.get("captions", {})
+        for k, v in cap.get("fix", {}).items():          # caption spelling fixes: {"55": "advantages"}
+            if int(k) < len(self.words): self.words[int(k)]["w"] = v
         skip = set(int(i) for i in cap.get("skip", []))
         kw = {}
         for k, v in cap.get("keywords", {}).items():
@@ -244,7 +246,8 @@ class Engine:
         self.hook = None
         ht = ed.get("hook_text")
         if ht:
-            self.hook = dict(lines=ht["lines"], ti=tl.t(ht.get("in", 0.06)), to=tl.t(ht.get("out")))
+            self.hook = dict(lines=ht["lines"], ti=tl.t(ht.get("in", 0.06)), to=tl.t(ht.get("out")),
+                             tuck=float(ht.get("tuck", 0.22)))
             self._layout_hook()
         self.title = None
         if tc:
@@ -309,7 +312,7 @@ class Engine:
         fspec = self.F["display"]
         n = len(hk["lines"])
         if self.L["hook"] == "side":
-            XR = clamp(h["x"] - 0.22 * h["w"], 0.35 * self.W, 0.72 * self.W)
+            XR = clamp(h["x"] - hk.get("tuck", 0.22) * h["w"], 0.35 * self.W, 0.72 * self.W)
             top, bottom = 60, self.L["cap_y"] - 95
             pitch = (bottom - top) / n
             size = int(pitch * 1.06)
@@ -458,7 +461,10 @@ class Engine:
 
     @lru_cache(None)
     def card_label(self, txt):
-        return text_sprite(txt, self.F["caption"], int(self.L["card"][3] * 0.087), self.C["text"], tracking=2, pad=6)
+        size = int(self.L["card"][3] * 0.087)
+        while size > 18 and font(self.F["caption"], size).getlength(txt) + 2 * len(txt) > self.L["card"][2] - 70:
+            size -= 2
+        return text_sprite(txt, self.F["caption"], size, self.C["text"], tracking=2, pad=6)
 
     @lru_cache(None)
     def check_badge(self):

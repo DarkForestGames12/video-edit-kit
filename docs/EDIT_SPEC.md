@@ -19,9 +19,9 @@ contact sheets; every render stage reads it. Full worked example: `examples/biol
 | `mode` | `"full"` (every frame designed; up to ~5 min) or `"long"` (hybrid render for long videos) |
 | `segments` | the cut, **in playback order** (reordering = moving the hook to the top) |
 | `punches` | `[{"at": time, "z": 1.30, "dur": 0.16}]` quick zoom-in for emphasis inside a segment |
-| `hook_text` | `{"lines": ["BIO","LOGY"], "in": 0.06, "out": 2.95}` giant text *behind* the speaker |
+| `hook_text` | `{"lines": ["BIO","LOGY"], "in": 0.06, "out": 2.95, "tuck": 0.22}` giant text *behind* the speaker; raise `tuck` (0.3-0.4) when the speaker sits close and hides too much of it |
 | `title_card` | `{"in","out","end","kicker","title","sub"}` full-screen animated title; `in`->`out` hold, `out`->`end` zoom-through exit. Voice keeps playing under it. |
-| `captions` | `{"skip":[0], "keywords":{"HEART":"alert","12":"accent"}, "groups":[[1,2,3],[4,5]], "hide":[[a,b]]}` all optional; `groups` overrides automatic line breaking |
+| `captions` | `{"skip":[0], "keywords":{"HEART":"alert","12":"accent"}, "fix":{"55":"advantages"}, "groups":[[1,2,3],[4,5]], "hide":[[a,b]]}` all optional; `fix` corrects a misheard word, `groups` overrides automatic line breaking |
 | `stickers` | `[{"icon","color","in","out","side":"left|right","mode":"pop|wave|bob|spin","dx","dy"}]` icon pops beside the head |
 | `cards` | explainer cards (see below) |
 | `burst` | `{"in","out","icons":[["brain","#FF8FB1"],...]}` arc of icons around the head (lists, "and more") |

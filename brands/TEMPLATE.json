@@ -21,7 +21,7 @@
   "captions": {"uppercase": true, "size_169": 82, "size_916": 92, "stroke": 9},
   "title_motif": "helix",
   "floaters": ["atom", "microscope", "leaf", "flask", "virus"],
-  "music": {"mood": "uplifting", "bpm": 105, "key": 0},
+  "music": {"mood": "uplifting", "key": 0},
   "grade": {},
   "finish": {"vignette": 0.30, "grain": 0.018},
   "end_card": {"lines": ["THANKS FOR", "WATCHING!", "SEE YOU IN THE NEXT ONE"], "button": "SUBSCRIBE"}

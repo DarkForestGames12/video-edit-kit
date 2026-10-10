@@ -147,14 +147,14 @@ def build(job):
                 if c.get("ecg"): fx.add(fx.beep(1000, 0.08), tl.t(b) + 0.02, 0.05, -0.4)
         elif c.get("pop") is not None:
             pt = tl.t(c["pop"])
-            fx.add(fx.verb(fx.bell([1318.5, 1760.0, 2637.0], 1.3, 0.07), 0.45), pt, 0.13, -0.3)
-            fx.add(fx.verb(fx.pop(700, 1200)), pt + 0.06, 0.35, -0.3)
+            fx.add(fx.verb(fx.bell([1318.5, 1760.0, 2637.0], 1.3, 0.07), 0.45), pt, 0.09, -0.3)
+            fx.add(fx.verb(fx.pop(700, 1200)), pt + 0.06, 0.22, -0.3)
     b = ed.get("burst")
     if b:
         bi, bo = tl.t(b["in"]), tl.t(b["out"])
         for k in range(len(b.get("icons", []))):
             f = 500 * 2 ** (k * 2 / 12)
-            fx.add(fx.verb(fx.pop(f, f * 1.8), 0.25), bi + 0.07 * k, 0.32, -0.7 + 1.4 * k / max(1, len(b["icons"]) - 1))
+            fx.add(fx.verb(fx.pop(f, f * 1.8), 0.25), bi + 0.07 * k, 0.17, -0.7 + 1.4 * k / max(1, len(b["icons"]) - 1))
         fx.add(fx.whoosh(0.3, 3000, 600, 0, 0, 0.5), bo - 0.24, 0.15)
     ec = edl.get("endcard_in")
     if ec is not None:

@@ -50,7 +50,7 @@ class Stream:
                 break
             self.cache[self.next] = r
             self.next += 1
-            while len(self.cache) > 90:
+            while len(self.cache) > 24:
                 self.cache.popitem(last=False)
         if idx in self.cache:
             return self.cache[idx]

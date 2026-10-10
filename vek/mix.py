@@ -50,16 +50,27 @@ def mix(job, target=-14.0):
         rise = np.clip((tt - edl["endcard_in"]) / 0.6, 0, 1)
         duck = duck * (1 - rise) + d["endcard"] * rise
     gain = np.interp(np.arange(N) / SR, tt, 10 ** (duck / 20))
-    stems = dict(voice=np.stack([voice, voice], 1), music=music * gain[:, None] * d["music_gain"], sfx=sfx * d["sfx_gain"])
+    sduck = np.interp(np.arange(N) / SR, tt, 10 ** (d.get("sfx_duck", -4.0) * g / 20))   # effects step back under speech
+    stems = dict(voice=np.stack([voice, voice], 1), music=music * gain[:, None] * d["music_gain"],
+                 sfx=sfx * sduck[:, None] * d["sfx_gain"])
     for k, v in stems.items():
         sf.write(job.p(f"stem_{k}.wav"), v, SR, subtype="FLOAT")
+    # balance against the measured voice: recordings differ a lot in level
+    spe = max(1, (edl.get("endcard_in") or edl["total"]) - 0.1)
+    Lv = loudness(job.p("stem_voice.wav"), 0, spe)[0]
+    for k, rel in (("music", d.get("music_rel", -12.5)), ("sfx", d.get("sfx_rel", -5.5))):
+        L = loudness(job.p(f"stem_{k}.wav"), 0, spe)[0]
+        if Lv is not None and L is not None and L > -70:
+            g = float(np.clip(10 ** ((Lv + rel - L) / 20), 0.1, 3.0))
+            stems[k] = stems[k] * g
+            sf.write(job.p(f"stem_{k}.wav"), stems[k], SR, subtype="FLOAT")
     pre = stems["voice"] + stems["music"] + stems["sfx"]
     sf.write(job.p("mix_pre.wav"), pre, SR, subtype="FLOAT")
     I, P = loudness(job.p("mix_pre.wav"))
-    gdb = target - I + 0.25
+    gdb = target - I + 0.35
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", job.p("mix_pre.wav"), "-af",
                     f"volume={gdb:.2f}dB,alimiter=limit=0.85:attack=3:release=60:level=disabled,aresample=192000,"
-                    "alimiter=limit=0.89:attack=1:release=40:level=disabled,aresample=48000",
+                    "alimiter=limit=0.84:attack=1:release=40:level=disabled,aresample=48000",
                     "-c:a", "pcm_s24le", job.p("master.wav")], check=True)
     I2, P2 = loudness(job.p("master.wav"))
     print(f"[mix] master {I2} LUFS, true peak {P2} dBTP")

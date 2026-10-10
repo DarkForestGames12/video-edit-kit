@@ -61,7 +61,9 @@ python -m vek transcribe JOB
 Optionally start from `python -m vek autocut JOB` (draft in `cuts.draft.json`), but decide yourself.
 1. **Hook first.** Find the single strongest self-contained line (a bold claim, payoff, surprise, or
    "X can help you so much…") and move it to 0.0 s. Greeting ("hey guys, welcome back") comes
-   after the hook. Don't repeat that line later.
+   after the hook. Don't repeat that line later — unless removing it would break the argument
+   (e.g. it's one side of a pros/cons pair); then use it as a cold open and let it play again in
+   context, framed differently.
 2. **Structure:** HOOK → whip → greeting/intro → TITLE CARD → body in the speaker's order →
    payoff → goodbye → END CARD.
 3. **Remove:** fillers, stutters, false starts and retakes (keep the *clean* take — usually the
@@ -86,7 +88,12 @@ Optionally start from `python -m vek autocut JOB` (draft in `cuts.draft.json`), 
    - `burst`: lists, "and so on", "etc.".
    - `end_card`: `loop` a wave or smile from the source.
    - caption `keywords`: topic word = accent, warning/emotion = alert, positive = accent2.
-     `skip` caption words the hook text already shows.
+     `skip` caption words the hook text already shows; `fix` a word the recogniser misheard
+     (e.g. `{"55": "advantages"}`).
+   - Run `python -m vek frames` early and read the caption lines: for slow or pausing speakers the
+     automatic lines get choppy (one-word lines, "online | chat group") — then set
+     `captions.groups` by hand (every word index, in order).
+   - Hook text hidden too much behind a close-up head → raise `hook_text.tuck` (0.3–0.4).
 9. **Captions stay faithful** to what was said (fillers may be dropped; don't put words in their mouth).
 10. **Music:** mood from the brand; the kit anchors a downbeat to `title_card.in`.
 Write `JOB/edit.json` (spec: `docs/EDIT_SPEC.md`), with a `note` on every segment saying why.
@@ -100,6 +107,10 @@ python -m vek audio JOB     # music + sound design + mix/master
 - `words.json` now gives word indices; switch keyword-synced times to refs like `"w45"` and rerun
   `voice` only if the cut changed, `audio` if graphics times changed.
 - Mix check line: music 11–14 LU under the voice during speech; master −14 LUFS, true peak ≤ −1.
+  (Music and effects are auto-balanced against the measured voice; tune with `mix.music_rel` /
+  `mix.sfx_rel` in edit.json if needed.)
+- No channel / one-off video: write a job-local brand file (`"brand": "/abs/path/brand.json"`) that
+  fits the topic, set `end_card.button` to null, and don't ask the user to save it.
 
 ## 5. Picture checks before the long render
 ```
@@ -127,8 +138,10 @@ captions never over the mouth.
   frames → render → review that job too.
 
 ## 7. Deliver
-- `python -m vek deliver JOB JOB/out/final.mp4 <Title_Name>` → `<name>.mp4` (≤29 MB share copy)
-  and `<name>_master.mp4` in `/mnt/user-data/outputs`. Send the share copy with SendUserFile.
+- `nohup python -m vek deliver JOB JOB/out/final.mp4 <Title_Name> > JOB/deliver.log 2>&1 &` (runs
+  ~10 min for a 1-min video; poll the log, don't restart it mid-way — it overwrites its outputs)
+  → `<name>.mp4` (≤29 MB share copy) and `<name>_master.mp4` in `/mnt/user-data/outputs`. Send
+  the share copy with SendUserFile.
   If the computer is linked, also write the master into a folder they choose.
 - Final message: what changed (hook moved, what was cut, with times), the look, graphics, sound,
   any caption wording choices, and one next step. No step-by-step recap.
@@ -137,6 +150,9 @@ captions never over the mouth.
 - Word timings come from forced alignment (CTC); recogniser timestamps alone drift 0.1–0.3 s.
 - Skin: keep the grade light; heavy smoothing + sharpening + zoom = painted look.
 - Plain crossfades between takes ghost; use `morph`.
+- A render part that stops with only "render part failed" and no traceback ran out of memory;
+  re-render just that range: `python -m vek render-part JOB t0 t1 JOB/out/_redo.mp4` (split it in
+  two for both cores), then concat the parts in order and mux (`vek.engine.mux`).
 - Hook-text side layout needs the subject to one side; 9:16 from landscape uses a top band.
 - Long videos: picking the hook and cuts from an hour of transcript is the real work — read the
   phrase map in chunks, use `autocut` for fillers, spend judgment on hook, structure and the
